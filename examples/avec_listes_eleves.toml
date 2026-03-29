@@ -1,0 +1,28 @@
+# Exemple minimal : un niveau avec liste d’élèves (CP), un niveau en effectif seul (CE1).
+
+num_classes = 8
+min_students_per_class = 5
+max_students_per_class = 32
+# Au moins 5 élèves de CHAQUE niveau dans toute classe à double niveau (évite 1+29, 5+27 reste possible).
+min_students_per_level_in_dual_class = 5
+num_plans = 5
+dfs_node_budget = 400000
+random_trials = 50000
+
+level_order = ["CP", "CE1", "CE2", "CM1", "CM2"]
+
+# Cycle 2 / cycle 3 (pour réduire la pénalité « hors cycle » du score)
+same_cycle_groups = [
+    ["CP", "CE1", "CE2"],
+    ["CM1", "CM2"],
+]
+
+# Exemple de paire à éviter explicitement (optionnel)
+forbidden_pairs = [["CP", "CM2"]]
+
+[levels]
+CP = 44
+CE1 = 29
+CE2 = 67
+CM1 = 65
+CM2 = 33

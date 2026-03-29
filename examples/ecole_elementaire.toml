@@ -1,0 +1,33 @@
+# Exemple : école élémentaire (CP → CM2), 8 classes, effectifs fictifs.
+# Hypothèses documentées dans le README.
+
+num_classes = 8
+max_students_per_class = 25
+min_students_per_class = 0
+num_plans = 8
+dfs_node_budget = 400000
+random_trials = 50000
+
+level_order = ["CP", "CE1", "CE2", "CM1", "CM2"]
+
+# Cycle 2 / cycle 3 (pour réduire la pénalité « hors cycle » du score)
+same_cycle_groups = [
+    ["CP", "CE1", "CE2"],
+    ["CM1", "CM2"],
+]
+
+# Exemple de paire à éviter explicitement (optionnel)
+# forbidden_pairs = [["CP", "CM2"]]
+
+[scoring]
+distance_weight = 3.0
+cross_cycle_penalty = 15.0
+balance_weight = 1.0
+overload_penalty_weight = 100.0
+
+[levels]
+CP = 35
+CE1 = 35
+CE2 = 36
+CM1 = 37
+CM2 = 37
